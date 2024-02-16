@@ -1,45 +1,45 @@
-*{
+* {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
   overflow: hidden;
 }
-:root{  
+:root {
   --darkgreen: rgb(2, 57, 2);
   --ark-secondary-color: rgba(7, 147, 99, 1);
   --lightgreen: rgb(9, 197, 9);
 }
-body{
+body {
   height: 100vh;
 }
-.game-board{
+.game-board {
   background-color: var(--ark-secondary-color);
   box-shadow: 50px 90px 190px -70px inset black;
- /*display: grid;*/
+  /*display: grid;*/
   min-height: 100rem;
   /*grid-template-columns: repeat(3,5rem);
   grid-auto-rows: 5rem;
   justify-content: space-between;*/
 }
-.header{
+.header {
   display: flex;
   justify-content: space-between;
   margin: 10px;
-  color:#000;
+  color: #000;
 }
-.cash-menu{
+.cash-menu {
   display: flex;
   justify-content: space-between;
   margin: 10px;
   color: var(--lightgreen);
   grid-area: 1/1/2/-1;
 }
-.cash{
+.cash {
   display: flex;
   align-items: center;
   gap: 1px;
 }
-.cash span{
+.cash span {
   border: 0.5px solid var(--lightgreen);
   border-radius: 50%;
   font-size: 8px;
@@ -47,9 +47,9 @@ body{
   text-align: center;
 }
 /* game controls */
-.controls{
- display: grid;
- grid-template:4rem/repeat(3,6rem);
+.controls {
+  display: grid;
+  grid-template: 4rem / repeat(3, 6rem);
   justify-content: space-between;
   align-items: center;
   align-content: center;
@@ -58,22 +58,23 @@ body{
   width: 100%;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
 }
 /*default stake button */
-.default-stake{
+.default-stake {
   width: 60px;
   height: 60px;
   border-radius: 50%;
-  background: repeating-conic-gradient(black 0deg 20deg,white 20deg 40deg);
+  background: repeating-conic-gradient(black 0deg 20deg, white 20deg 40deg);
   display: flex;
   justify-content: center;
   align-items: center;
 }
-.default-stake,.play{
+.default-stake,
+.play {
   grid-area: 1/2;
 }
-.border{
+.border {
   width: 45px;
   height: 45px;
   border: 4px solid rgb(24, 16, 16);
@@ -82,7 +83,7 @@ body{
   justify-content: center;
   align-items: center;
 }
-.border button{
+.border button {
   width: 100%;
   height: 100%;
   border: 1.5px dotted grey;
@@ -90,22 +91,23 @@ body{
   background-color: black;
   border-radius: 50%;
 }
-.deal,.play{
+.deal,
+.play {
   height: 40px;
   width: 100px;
   background-color: #0973b5;
   border: none;
   color: white;
 }
-.deal{
+.deal {
   justify-self: start;
   grid-area: 1/3;
 }
 /*game cards*/
-.cards{
+.cards {
   grid-area: 2/1/6/4;
 }
-.game-cards{
+.game-cards {
   width: 50px;
   height: 80px;
   border-radius: 5px;
@@ -114,12 +116,14 @@ body{
   list-style: none;
   margin: 1rem;
 }
-.dealer-card,.player-card{
+.dealer-card,
+.player-card {
   display: flex;
   justify-content: center;
 }
 /* dealer1 and player1 likewise dealer2 and player2 are grouped together because of transform rotate*/
-.player-card1,.dealer-card1{
+.player-card1,
+.dealer-card1 {
   transform: rotate(-15deg);
   margin-right: -35px;
   margin-top: 25px;
@@ -128,70 +132,71 @@ body{
   left: 105%;
 }
 
-.player-card2,.dealer-card2{
+.player-card2,
+.dealer-card2 {
   transform: rotate(5deg);
   margin-bottom: -10px;
   position: absolute;
   top: 50%;
   left: 105%;
 }
-.dealer-card1{
-  animation: dealer1 0.5s linear  1  forwards;
+.dealer-card1 {
+  animation: dealer1 0.5s linear 1 forwards;
 }
 @keyframes dealer1 {
-  from{
+  from {
     top: 50%;
-  left: 105%;
+    left: 105%;
   }
-  to{
+  to {
     top: 14%;
     left: 44%;
   }
 }
-.dealer-card2{
-  animation: dealer2 0.5s linear 0.3s 1  forwards;
+.dealer-card2 {
+  animation: dealer2 0.5s linear 0.3s 1 forwards;
 }
 @keyframes dealer2 {
-  from{
+  from {
     top: 50%;
-  left: 105%;
+    left: 105%;
   }
-  to{
+  to {
     top: 15%;
     left: 46%;
   }
 }
-.player-card1{
-  animation: player1 0.5s linear 0.2s 1  forwards;
+.player-card1 {
+  animation: player1 0.5s linear 0.2s 1 forwards;
 }
 @keyframes player1 {
-  from{
+  from {
     top: 50%;
-  left: 105%;
+    left: 105%;
   }
-  to{
+  to {
     top: 65%;
     left: 44%;
   }
 }
-.player-card2{
-  animation: player2 0.5s linear 0.4s 1  forwards;
+.player-card2 {
+  animation: player2 0.5s linear 0.4s 1 forwards;
 }
 @keyframes player2 {
-  from{
+  from {
     top: 50%;
-  left: 105%;
+    left: 105%;
   }
-  to{
+  to {
     top: 66%;
     left: 46%;
   }
 }
-.bet{
+.bet {
   /*grid-area: 6/1/9/4;*/
   width: 35%;
-  background: linear-gradient(to right, #02264f 100px,transparent 50px),
-  linear-gradient(to bottom,transparent 65px, #02264f 50px);
+  background: linear-gradient(to right, #02264f 100px, transparent 50px),
+    linear-gradient(to bottom, transparent 65px, #02264f 50px);
   margin: 10px;
   padding: 5px;
   position: absolute;
@@ -200,73 +205,68 @@ body{
   height: 200px;
   overflow: visible;
 }
-.animate-fund{
-  animation: bet 0.2s linear  1  forwards;
+.animate-fund {
+  animation: bet 0.2s linear 1 forwards;
 }
 @keyframes bet {
-  from{
+  from {
     bottom: -2%;
   }
-  to{
+  to {
     bottom: -30%;
   }
-  
 }
-.fund{
+.fund {
   margin: 0 2px;
 }
-.fund h4{
+.fund h4 {
   color: #fff;
   font-size: 14px;
   font-weight: 200;
 }
-.fund > button{
+.fund > button {
   border: none;
   width: 50px;
   height: 15px;
   font-size: 10px;
   background-color: blue;
-  color:#fff;
+  color: #fff;
 }
-.stake{
+.stake {
   display: flex;
   column-gap: 0.5rem;
   flex-wrap: wrap;
   height: 150px;
   margin-top: 2rem;
 }
-.ball{
+.ball {
   list-style: none;
+}
 
-}
-.ball >*{
-}
-@media screen and (max-width:680px){
-  .game-board{
+@media screen and (max-width: 680px) {
+  .game-board {
     height: 100%;
   }
-  .bet{
+  .bet {
     width: 70%;
     bottom: -1%;
   }
 }
-.coin{
+.coin {
   position: absolute;
   top: 35%;
   left: 5%;
- 
 }
-.animate-coin{
-  animation: coin 0.3s linear  1  forwards;
+.animate-coin {
+  animation: coin 0.3s linear 1 forwards;
 }
 @keyframes coin {
-  from{
+  from {
     top: 35%;
-  left: 5%;
+    left: 5%;
   }
-  to{
+  to {
     top: -82%;
-  left: 125%;
+    left: 50%;
   }
-  
 }
