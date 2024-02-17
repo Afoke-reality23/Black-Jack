@@ -16,7 +16,7 @@ body {
   background-color: var(--ark-secondary-color);
   box-shadow: 50px 90px 190px -70px inset black;
   /*display: grid;*/
-  min-height: 100rem;
+  min-height: 100vh;
   /*grid-template-columns: repeat(3,5rem);
   grid-auto-rows: 5rem;
   justify-content: space-between;*/
@@ -69,6 +69,12 @@ body {
   display: flex;
   justify-content: center;
   align-items: center;
+  align-self: end;
+  position: absolute;
+  margin-top: -3rem;
+  top: 35%;
+  left: 5%;
+  overflow: visible;
 }
 .default-stake,
 .play {
@@ -234,15 +240,95 @@ body {
 }
 .stake {
   display: flex;
-  column-gap: 0.5rem;
-  flex-wrap: wrap;
   height: 150px;
   margin-top: 2rem;
+  overflow: visible;
 }
-.ball {
-  list-style: none;
+.stake ul {
+  display: flex;
+  width: 80px;
+  position: relative;
+  overflow: visible;
 }
 
+.animate1 {
+  animation: coin1 0.3s linear 1 forwards;
+}
+@keyframes coin1 {
+  from {
+    top: 35%;
+    left: 5%;
+  }
+  to {
+    top: -118%;
+    left: 842%;
+  }
+}
+.animate2 {
+  animation: coin2 0.3s linear 1 forwards;
+}
+@keyframes coin2 {
+  from {
+    top: 35%;
+    left: 5%;
+  }
+  to {
+    top: -118%;
+    left: 742%;
+  }
+}
+.animate3 {
+  animation: coin3 0.3s linear 1 forwards;
+}
+@keyframes coin3 {
+  from {
+    top: 35%;
+    left: 5%;
+  }
+  to {
+    top: -118%;
+    left: 642%;
+  }
+}
+.animate4 {
+  animation: coin4 0.3s linear 1 forwards;
+}
+@keyframes coin4 {
+  from {
+    top: 35%;
+    left: 5%;
+  }
+  to {
+    top: -118%;
+    left: 542%;
+  }
+}
+.animate5 {
+  animation: coin5 0.3s linear 1 forwards;
+}
+@keyframes coin5 {
+  from {
+    top: 35%;
+    left: 5%;
+  }
+  to {
+    top: -118%;
+    left: 442%;
+  }
+}
+.animate6 {
+  animation: coin6 0.3s linear 1 forwards;
+}
+@keyframes coin6 {
+  from {
+    top: 35%;
+    left: 5%;
+  }
+  to {
+    top: -118%;
+    left: 342%;
+  }
+}
 @media screen and (max-width: 680px) {
   .game-board {
     height: 100%;
@@ -250,23 +336,5 @@ body {
   .bet {
     width: 70%;
     bottom: -1%;
-  }
-}
-.coin {
-  position: absolute;
-  top: 35%;
-  left: 5%;
-}
-.animate-coin {
-  animation: coin 0.3s linear 1 forwards;
-}
-@keyframes coin {
-  from {
-    top: 35%;
-    left: 5%;
-  }
-  to {
-    top: -82%;
-    left: 50%;
   }
 }

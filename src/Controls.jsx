@@ -2,7 +2,7 @@ export default function Controls(props) {
   return (
     <div className="controls">
       {!props.hidden.hideGamePart && (
-        <div className="default-stake">
+        <div className="default-stake" style={{ marginTop: "-1.3rem" }}>
           <div className="border">
             <button>100</button>
           </div>

@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 export default function Coin(props) {
   const [ani, setAni] = useState(props.animate);
   console.log(ani);
@@ -10,12 +9,11 @@ export default function Coin(props) {
     <div
       onClick={changePos}
       className={
-        !ani
-          ? `${props.coinClass} coin`
-          : `${props.coinClass} coin animate-coin`
+        !ani ? props.coinClass : `${props.coinClass} ${props.animateClass}`
       }
       style={{
         background: props.coinStyle,
+        zIndex: index,
       }}
     >
       <div
@@ -24,7 +22,11 @@ export default function Coin(props) {
           border: props.borderStyle,
         }}
       >
-        <button style={{ background: props.buttonStyle }}>{props.value}</button>
+        <button
+          style={{ background: props.buttonStyle, color: props.buttonText }}
+        >
+          {props.value}
+        </button>
       </div>
     </div>
   );
