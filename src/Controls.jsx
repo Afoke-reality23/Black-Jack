@@ -1,20 +1,25 @@
+import { useState } from "react";
 export default function Controls(props) {
   return (
     <div className="controls">
-      {!props.hidden.hideGamePart && (
-        <div className="default-stake" style={{ marginTop: "-1.3rem" }}>
-          <div className="border">
-            <button>100</button>
+      {!props.def && (
+        <div className="def-stake-parent-div">
+          <p className="stake-amount">${props.betAmount}</p>
+          <div className="default-stake">
+            <div className="border">
+              <button>100</button>
+            </div>
           </div>
         </div>
       )}
-      {props.hidden.hideGamePart && (
-        <button className="play" onClick={props.handleClick}>
+
+      {!props.play && (
+        <button className="play" onClick={props.playGame}>
           PLAY
         </button>
       )}
-      {!props.hidden.hideGamePart && (
-        <button className="deal" onClick={props.onCardDisplay}>
+      {!props.deal && (
+        <button className="deal" onClick={props.display}>
           DEAL
         </button>
       )}

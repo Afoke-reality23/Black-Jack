@@ -1,19 +1,16 @@
 import { useState } from "react";
 export default function Coin(props) {
   const [ani, setAni] = useState(props.animate);
-  console.log(ani);
-  function changePos() {
+  function changePos(e) {
     setAni((a) => !a);
   }
   return (
     <div
-      onClick={changePos}
       className={
         !ani ? props.coinClass : `${props.coinClass} ${props.animateClass}`
       }
       style={{
         background: props.coinStyle,
-        zIndex: index,
       }}
     >
       <div
@@ -24,6 +21,8 @@ export default function Coin(props) {
       >
         <button
           style={{ background: props.buttonStyle, color: props.buttonText }}
+          onClick={changePos}
+          value={props.value}
         >
           {props.value}
         </button>

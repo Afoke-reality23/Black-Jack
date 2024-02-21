@@ -1,6 +1,6 @@
 export default [
   {
-    buttonClass: "default-stake",
+    buttonClass: "stake-coin",
     btnBackground:
       "repeating-conic-gradient(rgb(6, 112, 147) 0deg 15deg, white 15deg 35deg)",
     position: "relative",
@@ -15,7 +15,7 @@ export default [
     animatClass: "animate1",
   },
   {
-    buttonClass: "default-stake",
+    buttonClass: "stake-coin",
     btnBackground:
       "repeating-conic-gradient(rgb(86, 5, 5) 0deg 15deg, white 15deg 35deg)",
     border: "border",
@@ -27,7 +27,7 @@ export default [
     animatClass: "animate2",
   },
   {
-    buttonClass: "default-stake",
+    buttonClass: "stake-coin",
     btnBackground:
       "repeating-conic-gradient(green 0deg 15deg, white 15deg 35deg)",
     border: "border",
@@ -39,7 +39,7 @@ export default [
     animatClass: "animate3",
   },
   {
-    buttonClass: "default-stake",
+    buttonClass: "stake-coin",
     btnBackground: "repeating-conic-gradient(red 0deg 20deg,white 20deg 40deg)",
     border: "border",
     borderBg: "4px solid red",
@@ -50,7 +50,7 @@ export default [
     animatClass: "animate4",
   },
   {
-    buttonClass: "default-stake",
+    buttonClass: "stake-coin",
     border: "border",
     value: 100,
     id: 5,
@@ -58,7 +58,7 @@ export default [
     animatClass: "animate5",
   },
   {
-    buttonClass: "default-stake",
+    buttonClass: "stake-coin",
     btnBackground:
       "repeating-conic-gradient(rgb(190, 22, 50) 0deg 15deg, white 15deg 35deg)",
     border: "border",

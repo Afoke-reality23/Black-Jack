@@ -3,10 +3,18 @@ import { useState } from "react";
 import Coin from "./Coin";
 export default function BetFund(props) {
   const [coin, setCoin] = useState(ButtonData);
-  const button = coin.map((data) => {
+
+  function betAll() {
+    setCoin(coin.map((c) => ({ ...c, animate: true })));
+    1;
+  }
+  const changePos = () => {
+    console.log("i was clicked");
+  };
+  const button = coin.map((data, index) => {
     return (
       <Coin
-        key={data.value}
+        key={index}
         coinClass={data.buttonClass}
         coinStyle={data.btnBackground}
         borderClass={data.border}
@@ -16,30 +24,32 @@ export default function BetFund(props) {
         animate={data.animate}
         animateClass={data.animatClass}
         buttonText={data.buttonText}
-        index={index}
+        handleToggle={changePos}
       />
     );
+    console.log(data.aniate);
   });
-  const coinOneArray = new Array(5).fill(button[0]);
+  const coinOneArray = new Array(6).fill(button[0]);
   const coinTwoArray = new Array(2).fill(button[1]);
   const coinThreeArray = new Array(2).fill(button[2]);
   const coinFourArray = new Array(2).fill(button[3]);
   const coinFiveArray = new Array(2).fill(button[4]);
   const coinSixArray = new Array(2).fill(button[5]);
   return (
-    <div className={!props.animate.hideFund ? "bet" : `bet animate-fund`}>
-      <div className="fund">
-        <h4>Bank:$900</h4>
-        <button>ALL IN</button>
-      </div>
-      <div className="stake">
-        <ul key={1}>{coinOneArray}</ul>
-        <ul key={1}>{coinTwoArray}</ul>
-        <ul key={1}>{coinThreeArray}</ul>
-        <ul key={1}>{coinFourArray}</ul>
-        <ul key={1}>{coinFiveArray}</ul>
-        <ul key={1}>{coinSixArray}</ul>
-      </div>
-    </div>
+    <>
+      {props.children}
+      {!props.bet && (
+        <div className="bet">
+          <div className="fund">
+            <h4>Bank:${props.fundAmount}</h4>
+            <button onClick={betAll}>ALL IN</button>
+          </div>
+          <div className="stake">
+            <li onClick={(e) => props.fundBet(1)}>{coinOneArray}</li>
+            <li onClick={(e) => props.fundBet(5)}>{coinTwoArray}</li>
+          </div>
+        </div>
+      )}
+    </>
   );
 }
